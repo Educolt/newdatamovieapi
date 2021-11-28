@@ -7,7 +7,7 @@ export const createMovieMiddleware = (request: Request, response: Response) => {
 
     const movie = new CreateMovieService().execute({
         name: 'Rambo 3',
-        description: 'Ola Mundo',
+        description: 'Ola Mun',
         uri: "http://localhost:3333"
     });
 
