@@ -1,5 +1,5 @@
 {
-  "name": "backend",
+  "name": "newdatamovieapi",
   "version": "1.0.0",
   "main": "./dist/server.js",
   "license": "MIT",
