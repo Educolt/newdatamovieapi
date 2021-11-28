@@ -5,7 +5,7 @@ import cors from 'cors';
 import { routes } from './routes';
 
 // create app server
-export const app = express();
+export const app = express()
 
 app.use(cors());
 app.use(express.json());
