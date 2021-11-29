@@ -1,3 +1,4 @@
+// types
 import { Request, Response }from 'express';
 
 // Services
@@ -5,11 +6,15 @@ import { CreateMovieService } from '../../services/CreateMovieService'
 
 export const createMovieMiddleware = (request: Request, response: Response) => {
 
-    const movie = new CreateMovieService().execute({
-        name: 'Rambo 3',
-        description: 'Ola Mun',
-        uri: "http://localhost:3333"
-    });
+    const { title, description, uri } = request.body;
+
+    const data =  {
+        title,
+        description,
+        uri
+    }
+
+    const movie = new CreateMovieService().execute(data);
 
     return response.status(201).json(movie);
 }

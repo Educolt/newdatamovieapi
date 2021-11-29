@@ -1,7 +1,7 @@
 import express from "express";
 
 // middlewares
-import { createUserMiddleware } from './middlewares'
+import { createUserMiddleware, getUserMiddleware } from './middlewares'
 
 // create Users Router
 export const UserRouter = express.Router();

@@ -1,12 +1,21 @@
-import { Movie } from '../types'
+// Model
+import { Movie } from '../Model/Movie';
+
+// types
+import { MovieRequestType } from '../types'
 
 export class CreateMovieService {
-    execute({name, description, uri}: Movie) {
-        return {
-            name,
+    execute({title, description, uri}: MovieRequestType) {
+
+        const movie = new Movie();
+
+        Object.assign(movie, {
+            title,
             description,
-            uri
-        };
-        
+            uri,
+            created_at: new Date(),
+        });
+
+        return movie;
     };
 }
