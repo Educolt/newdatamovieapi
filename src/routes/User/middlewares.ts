@@ -1,25 +1,25 @@
-// types
-import { Request, Response } from 'express';
+import { Request, Response} from "express";
 
 // services
 import { CreateUserService } from '../../services/CreateUserService';
 
-export const createUserMiddleware = (request: Request, response: Response) => {
+// User Repositorie
+import { UsersRepositorie } from '../../repositories/UsersRepositorie';
+
+// create instance of repositorie
+const usersRepositorie = new UsersRepositorie();
+
+export const createUserMiddleware = async (request: Request, response: Response) => {
 
     const { username, password } = request.body;
 
-    const data = {
+    const user = await new CreateUserService(usersRepositorie).execute({
         username,
         password
-    }
-
-    const user = new CreateUserService().execute(data);
+    });
 
     return response.status(201).json(user);
 }
-
-export const getUserMiddleware = (request: Request, response: Response) => {
-    const {id} = request.query;
-
-    return response.status(200).json();
+export const getUsersMiddleware = async (_: Request, response: Response) => {
+    return response.status(200).json(await usersRepositorie.list());
 }

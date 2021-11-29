@@ -1,16 +1,22 @@
-import {v4 as uuidV4} from 'uuid';
+import mongoose from 'mongoose'
 
-class Movie {
-    id?: string;
-    title: string;
-    description: string;
-    created_at: Date;
-
-    constructor() {
-        if (!this.id) {
-            this.id = uuidV4();
-        }
+const MovieSchema = new mongoose.Schema({
+    title: {
+        type: String,
+        required:true
+    },
+    description: {
+        type: String,
+        required:true
+    },
+    uri: {
+        type: String,
+        required:true
+    },
+    created_at: {
+        type: Date,
+        default: Date.now
     }
-}
+});
 
-export { Movie };
+export const Movie = mongoose.model('Movie', MovieSchema);

@@ -1,19 +1,19 @@
-// Model
-import { Movie } from '../Model/Movie';
+// Create Movie Request type
+import { ICreateMovieRequest } from '../types'
 
-// types
-import { MovieRequestType } from '../types'
+// Movie repositorie
+import { MoviesRepositorie } from '../repositories/MoviesRepositorie'
 
 export class CreateMovieService {
-    execute({title, description, uri}: MovieRequestType) {
 
-        const movie = new Movie();
+    constructor(private moviesRepositorie: MoviesRepositorie){}
+    
+    async execute({title, description, uri}: ICreateMovieRequest) {
 
-        Object.assign(movie, {
+        const movie = await this.moviesRepositorie.create({
             title,
             description,
-            uri,
-            created_at: new Date(),
+            uri
         });
 
         return movie;

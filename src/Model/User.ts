@@ -1,16 +1,19 @@
-import {v4 as uuidV4} from 'uuid';
+import mongoose from 'mongoose'
 
-class User {
-    id?: string;
-    username: string;
-    password: string;
-    created_at: Date;
 
-    constructor() {
-        if (!this.id) {
-            this.id = uuidV4();
-        }
+const UserSchema = new mongoose.Schema({
+    username: {
+        type: String,
+        required:true
+    },
+    password: {
+        type: String,
+        required:true
+    },
+    created_at: {
+        type: Date,
+        default: Date.now
     }
-}
+});
 
-export { User };
+export const User = mongoose.model('User', UserSchema);

@@ -1,19 +1,18 @@
-// Model
-import { User } from '../Model/User';
+// Create User Request type
+import { ICreateUserRequest } from '../types';
 
-// Type
-import { UserRequestType } from '../types/index'
+// User repositorie
+import { UsersRepositorie } from '../repositories/UsersRepositorie'
 
 export class CreateUserService {
-    execute({username, password}: UserRequestType) {
-        
-        const user = new User();
+    constructor(private usersRepositorie: UsersRepositorie){}
 
-        Object.assign(user, {
-            username,
-            password,
-            created_at: new Date()
-        });
+    async execute({username, password}: ICreateUserRequest) {
+
+       const user = await this.usersRepositorie.create({
+           username,
+           password
+       });
         
         return user;
     };

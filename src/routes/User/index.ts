@@ -1,10 +1,10 @@
 import express from "express";
 
-// middlewares
-import { createUserMiddleware, getUserMiddleware } from './middlewares'
+import { createUserMiddleware, getUsersMiddleware} from './middlewares'
 
 // create Users Router
 export const UserRouter = express.Router();
 
 // routes
-UserRouter.post('/create', createUserMiddleware);
+UserRouter.post('/', createUserMiddleware);
+UserRouter.get('/', getUsersMiddleware);
