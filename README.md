@@ -78,6 +78,7 @@ O projeto foi desenvolvido utilizando as seguintes tecnologias
 
 - [Node.js](https://nodejs.org/en/)
 - [App Mobile](https://github.com/Educolt/newdatamovie)
+- [MongoDB](https://www.mongodb.com/)
 
 ---
 
