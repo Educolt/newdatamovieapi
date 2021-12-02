@@ -46,6 +46,7 @@ O projeto foi desenvolvido utilizando as seguintes tecnologias
   $ yarn dev
 
 ```
+Atention: Antes de rodar a api, criar .env file na raiz do projeto e setar os valores, de conexão com o banco e da porta em que a api irá rodar, depois acessar rota de criação de usuário e criar usuário solicitado no PDF do desafio.
 
 ---
 
