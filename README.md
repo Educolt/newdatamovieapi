@@ -20,6 +20,57 @@
 Aplicação desenvolvida para solução do Desafio da Vaga FullStack Dev Junior. [PDF do Desafio](https://drive.google.com/file/d/1gPqiuzkTp8DGDyZj49rfwkcAgI5whYgw/view?usp=sharing)
 
 ---
+# 👀 Images
+
+## # GET - All Movies
+
+<h1 align="center">
+
+  <img src="./assets/GetAllMovies.png" weight="400" />
+
+</h1>
+
+## # GET - Users
+
+<h1 align="center">
+
+  <img src="./assets/GetUsers.png" weight="400" />
+
+</h1>
+
+## # Post - Users
+
+<h1 align="center">
+
+  <img src="./assets/PostUser.png" weight="400" />
+
+</h1>
+
+## # Post - Movies
+
+<h1 align="center">
+
+  <img src="./assets/PostMovie.png" weight="400" />
+
+</h1>
+
+## # MongoDB - Users
+
+<h1 align="center">
+
+  <img src="./assets/MongoDBUser.png" weight="400" />
+
+</h1>
+
+## # MongoDB - Movies
+
+<h1 align="center">
+
+  <img src="./assets/MongoDBMovies.png" weight="400" />
+
+</h1>
+
+---
 
 ## 🚀 Tecnologias Utilizadas
 
