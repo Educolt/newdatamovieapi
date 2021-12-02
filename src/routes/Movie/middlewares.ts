@@ -25,10 +25,12 @@ export const getMoviesMiddleware = async (_: Request, response: Response) => {
     return response.status(200).json(await moviesRepositorie.list());
 }
 
-export const deleteMovieById = async (request: Request, response: Response) => {
+export const deleteMovieByTitle = async (request: Request, response: Response) => {
     try {
-        const {id} = request.query;
-        await moviesRepositorie.delete(id.toString())
+        const {title} = request.params;
+        const movies = await moviesRepositorie.list();
+        const movie = movies.find(m => m.title === title);
+        await moviesRepositorie.delete(movie.id.toString())
     
         return response.status(200).json({message: 'deleted'});
     } catch (error) {

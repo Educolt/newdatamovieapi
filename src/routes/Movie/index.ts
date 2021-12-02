@@ -1,7 +1,7 @@
 import express from 'express';
 
 // middlewares
-import { createMovieMiddleware, getMoviesMiddleware, deleteMovieById} from './middlewares'
+import { createMovieMiddleware, getMoviesMiddleware, deleteMovieByTitle} from './middlewares'
 
 // create Movies Router
 export const MovieRouter = express.Router();
@@ -11,4 +11,4 @@ MovieRouter.post('/', createMovieMiddleware);
 
 MovieRouter.get('/', getMoviesMiddleware);
 
-MovieRouter.delete('/', deleteMovieById )
+MovieRouter.delete('/:title', deleteMovieByTitle )
